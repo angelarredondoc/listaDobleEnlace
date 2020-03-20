@@ -17,8 +17,17 @@ namespace Lista
         {
             //Variable para el nuevo nodo a insertar en la lista
             Node newNode = new Node();
-            //Lee el número entero y lo guarda dentro del campo dato en el nuevo nodo
-            newNode.Data = int.Parse(Console.ReadLine());
+            try
+            {
+                //Lee el número entero y lo guarda dentro del campo dato en el nuevo nodo
+                newNode.Data = int.Parse(Console.ReadLine());
+            }
+            catch(FormatException)
+            {
+                Console.WriteLine("Valor numérico no válido, Por excepción se asigna un 0 al nodo actual");
+                newNode.Data = 0;
+            }
+            
             //Verifica si el primer nodo está vacío
             if (first == null)
             {
