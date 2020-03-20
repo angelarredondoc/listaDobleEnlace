@@ -13,21 +13,14 @@ namespace Lista
             last = null;
         }
         //Método insertar nodo, lee un número entero y lo guarda en el campo dato dentro del nodo
-        public void insertNode()
+        public void InsertNode()
         {
             //Variable para el nuevo nodo a insertar en la lista
-            Node newNode = new Node();
-            try
+            Node newNode = new Node
             {
                 //Lee el número entero y lo guarda dentro del campo dato en el nuevo nodo
-                newNode.Data = int.Parse(Console.ReadLine());
-            }
-            catch(FormatException)
-            {
-                Console.WriteLine("Valor numérico no válido, Por excepción se asigna un 0 al nodo actual");
-                newNode.Data = 0;
-            }
-            
+                Data = int.Parse(Console.ReadLine())
+            };
             //Verifica si el primer nodo está vacío
             if (first == null)
             {
@@ -51,8 +44,10 @@ namespace Lista
                 last = newNode;
             }
         }
+        //Método para saber si la lista está vacía
+        public bool IsEmpty() => first == null;
         //Método imprimir lista de inicio a fin
-        public void printFL()
+        public void PrintFL()
         {
             //Crea un nuevo objeto de tipo Nodo llamado auxiliar
             Node assistant = new Node();
@@ -68,7 +63,7 @@ namespace Lista
             }
         }
         //Método imprimir lista de fin a inicio
-        public void printLF()
+        public void PrintLF()
         {
             //Crea un nuevo objeto de tipo Nodo llamado auxiliar
             Node assistant = new Node();
